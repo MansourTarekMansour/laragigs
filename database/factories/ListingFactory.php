@@ -20,7 +20,7 @@ class ListingFactory extends Factory
             'title' => $this->faker->sentence(),
             'tags' => 'backend, laravel, php', // Generates a string of 3 words
             'company' => $this->faker->company(),
-            'locatin' => $this->faker->city(), // Correct the typo to 'location' in your schema migration
+            'location' => $this->faker->city(), // Correct the typo to 'location' in your schema migration
             'email' => $this->faker->companyEmail(),
             'website' => $this->faker->url(),
             'description' => $this->faker->paragraph(5),
