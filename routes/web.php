@@ -1,21 +1,12 @@
 <?php
 
+use App\Http\Controllers\ListingController;
 use App\Models\Listing;
 use Illuminate\Support\Facades\Route;
 
 
-
 // All Listings
-Route::get('/', function () {
-    return view('listings', [
-        'heading' => 'Lastest Listings',
-        'listings' => Listing::all(),
-    ]);
-});
+Route::get('/', [ListingController::class, 'index']);
 
 // Get Listing by id
-Route::get('/listings/{listing}', function (Listing $listing) {
-    return view('listing', [
-        'listing' => $listing
-    ]);
-});
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
