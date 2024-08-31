@@ -9,6 +9,9 @@
     @else
     <p>No listing found</p>
     @endunless
-
+    
 </div>
+<div class="mt-6 p-7 justify-center items-center">
+        {{$listings->links('pagination::simple-tailwind')}}
+    </div>
 </x-layout>
