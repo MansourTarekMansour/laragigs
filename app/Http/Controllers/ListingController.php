@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
 
 class ListingController extends Controller
 {
@@ -39,6 +40,7 @@ class ListingController extends Controller
         if($request->hasFile('logo')){
             $formFileds['logo'] = $request->file('logo')->store('logos', 'public');
         }
+        $formFileds['user_id'] = Auth::id();
         Listing::create($formFileds);
         return redirect('/')->with('message', 'Listing created successfully');
     }
